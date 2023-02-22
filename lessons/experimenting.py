@@ -10,4 +10,6 @@ elif(Name == "Myles"):
     print("wassgood dawg")
 elif(Name == "Sophie"):
     print("HEY go watch BLUEY!")
+elif(Name == "Emma"):
+    print("pet cleo for me")
 print ("HAVE A GREAT DAY")

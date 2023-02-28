@@ -2,20 +2,24 @@
 
 __author__ = "730402453"
 
+WHITE_BOX: str = "\U00002B1C"
+GREEN_BOX: str = "\U0001F7E9"
+YELLOW_BOX: str = "\U0001F7E8"
 
-def contains_char(secret, guess) -> bool:
-    assert len(guess) == 1
+
+def contains_char(word: str, char: str) -> bool:
+    """Checks to see if a word contains a character."""
+    assert len(char) == 1
     i = 0
-    while i < len(secret): #checking to makes sure you have right amount of characters
-        if secret[i] == guess:
+    while i < len(word): #checking to makes sure you have right amount of characters
+        if word[i] == char:
             return True
         i += 1
     return False
     
-def emojified(guess:str, secret:str):
-    WHITE_BOX: str = "\U00002B1C"
-    GREEN_BOX: str = "\U0001F7E9"
-    YELLOW_BOX: str = "\U0001F7E8"
+
+def emojified(guess: str, secret: str) -> str:
+    """Concatenates the emoji boxes."""
     assert len(guess) == len(secret)
     result: str = ""
     i = 0
@@ -30,14 +34,14 @@ def emojified(guess:str, secret:str):
         i += 1
     return result
 
-def input_guess(word_length: int):
+
+def input_guess(word_length: int) -> str:
+    """Asks user to guess the expected length of a guess."""
     input_guess: str = input(f"Enter a {word_length} character word: ")
-    playing: bool = True #need to say true in order to end the game with false
-    while playing is True:
-        if len(input_guess) == word_length:
-            return input_guess
-        if len(input_guess) != word_length:
-            input_guess = input(f"That wasn't {word_length} chars! Try again: ")
+    while len(input_guess) != word_length:
+        input_guess = input(f"That wasn't {word_length} chars! Try again: ")
+    return input_guess
+
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
@@ -60,5 +64,6 @@ def main() -> None:
     if Game_over == False:
         print("X/6 - Sorry, try again tomorrow!")
 
-if __name__ == "__main__":
-    main()
+
+#if __name__ == "__main__":
+    #main()

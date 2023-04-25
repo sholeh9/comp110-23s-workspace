@@ -6,7 +6,7 @@ def addition(x: int, y: int):
 my_variable: str = "Hello!"
 
 if __name__ == "__main__":
-    print(This should only print when running my_functions)
+    print("This should only print when running my_functions")
 else:
     print("my_functions is being imported")
     

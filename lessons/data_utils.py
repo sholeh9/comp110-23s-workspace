@@ -1,11 +1,11 @@
 
-from csv import DictReader
+from csv import DictReader #reads csv files and converts them into dictionaries
 
 def read_csv_rows(filename: str) -> list[dict[str,str]]:
     """Read csv file and return as a list of dicts with header keys"""
-    result: list[dict[str, str]] = []
+    result: list[dict[str, str]] = [] #skeleton code
     file_handle = open(filename, "r", encoding="utf8")
-    csv_reader = DictReader(file_handle)
+    csv_reader = DictReader(file_handle) #can iterate through this
     for row in csv_reader:
         result.append(row)
     file_handle.close()
